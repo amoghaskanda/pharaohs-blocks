@@ -77,7 +77,7 @@ const App: React.FC = () => {
       } else if (e.code === 'ArrowDown') {
         dropPlayer();
       } else if (e.code === 'ArrowUp') {
-        playerRotate(grid, 1);
+        playerRotate(grid);
       } else if (e.code === 'Space') {
         hardDrop();
       }
@@ -160,7 +160,7 @@ const App: React.FC = () => {
           {/* Mobile Controls (Visible only on small screens) */}
           <div className="lg:hidden mt-6 grid grid-cols-3 gap-4 w-full max-w-xs">
              <button className="h-14 bg-stone-800 rounded border border-stone-600 active:bg-stone-700 flex items-center justify-center text-2xl" onClick={() => movePlayer(-1)}>←</button>
-             <button className="h-14 bg-stone-800 rounded border border-stone-600 active:bg-stone-700 flex items-center justify-center text-2xl" onClick={() => playerRotate(grid, 1)}>↻</button>
+             <button className="h-14 bg-stone-800 rounded border border-stone-600 active:bg-stone-700 flex items-center justify-center text-2xl" onClick={() => playerRotate(grid)}>↻</button>
              <button className="h-14 bg-stone-800 rounded border border-stone-600 active:bg-stone-700 flex items-center justify-center text-2xl" onClick={() => movePlayer(1)}>→</button>
              <button className="h-14 bg-stone-800 rounded border border-stone-600 active:bg-stone-700 flex items-center justify-center text-2xl col-span-3" onMouseDown={hardDrop} onMouseUp={stopHardDrop} onTouchStart={hardDrop} onTouchEnd={stopHardDrop}>↓</button>
           </div>

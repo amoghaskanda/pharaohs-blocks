@@ -1,6 +1,6 @@
 import { useState, useCallback, useEffect } from 'react';
 import { GRID_WIDTH, GRID_HEIGHT, RANDOM_TETROMINO, TETROMINOS } from '../constants';
-import { Grid, GameStatus, Player, TetrominoType } from '../types';
+import { Grid, GameStatus, Player } from '../types';
 import { useInterval } from './useInterval';
 
 const createGrid = (): Grid =>
@@ -148,7 +148,7 @@ export const useGameLogic = () => {
     return rotated.map((row) => row.reverse());
   };
 
-  const playerRotate = (grid: Grid, dir: number) => {
+  const playerRotate = (grid: Grid) => {
     if (isFastDropping) return;
     
     const clonedPlayer = JSON.parse(JSON.stringify(player));
